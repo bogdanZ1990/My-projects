@@ -17,7 +17,7 @@
         <section>
             <div class="bill">
                 <label for="yourBill">Bill:</label>
-                <input type="number" placeholder="Your bill" id="yourBill">
+                <input type="number" placeholder="Your bill" min="0" id="yourBill">
             </div>
             <div>
                 <div class="space-between">
@@ -54,10 +54,10 @@
             let tipValue = bill * (tipPercent / 100);
             let taxAmount = bill * 0.07;
 
-            document.getElementById('tipPercent').innerHTML = tipPercent + '%';
-            document.getElementById('tipValue').innerHTML = formatMoney(tipValue);
-            document.getElementById('tax').innerHTML = formatMoney(taxAmount);
-            document.getElementById('totalWithTip').innerHTML = formatMoney(bill + taxAmount + tipValue);
+            document.getElementById('tipPercent').innerText = tipPercent + '%';
+            document.getElementById('tipValue').innerText = formatMoney(tipValue);
+            document.getElementById('tax').innerText = formatMoney(taxAmount);
+            document.getElementById('totalWithTip').innerText = formatMoney(bill + taxAmount + tipValue);
         }
 
         let container = document.getElementById('container');
